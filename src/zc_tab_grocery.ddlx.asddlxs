@@ -1,0 +1,152 @@
+@Metadata.layer: #CORE
+@UI: {
+    headerInfo: {
+    typeName: 'Sustainable Grocery App',
+    typeNamePlural: 'Sustainable Groceries App'
+  }
+}
+annotate view ZC_TAB_GROCERY with
+{
+  @UI.facet: [ {
+    id: 'idIdentification',
+    type: #IDENTIFICATION_REFERENCE,
+    label: 'Sustainable Groceries App',
+    position: 10
+  } ]
+  @UI: { lineItem: [ { exclude: true } ,
+  { type: #FOR_ACTION,
+    dataAction: 'checkExpirationDate' ,
+    label: 'Check for expiration' } ] ,
+  identification: [ { position: 1, label: 'ID' } ,
+  { type: #FOR_ACTION,
+    dataAction: 'checkExpirationDate',
+    label: 'Check for expiration' } ] }
+
+  @UI.hidden: true
+  Id;
+
+  @UI.lineItem: [ {
+    position: 10 ,
+    importance: #HIGH,
+    label: 'Product'
+  } ]
+  @UI.identification: [ {
+    position: 10 ,
+    label: 'Product'
+  } ]
+  Product;
+
+  @UI.lineItem: [ {
+    position: 20 ,
+    importance: #MEDIUM,
+    label: 'Category'
+  } ]
+  @UI.identification: [ {
+    position: 20 ,
+    label: 'Category'
+  } ]
+  Category;
+
+  @UI.lineItem: [ {
+    position: 30 ,
+    importance: #MEDIUM,
+    label: 'Brand'
+  } ]
+  @UI.identification: [ {
+    position: 30 ,
+    label: 'Brand'
+  } ]
+  Brand;
+
+  @UI.lineItem: [ {
+    position: 40 ,
+    importance: #MEDIUM,
+    label: 'Price/Currency'
+  } ]
+  @UI.identification: [ {
+    position: 40 ,
+    label: 'Price/Currency'
+  } ]
+  Price;
+
+  @UI.hidden: true
+  Currency;
+
+  @UI.lineItem: [ {
+    position: 60 ,
+    importance: #MEDIUM,
+    label: 'Quantity'
+  } ]
+  @UI.identification: [ {
+    position: 60 ,
+    label: 'Quantity'
+  } ]
+  Quantity;
+
+  @UI.lineItem: [ {
+    position: 70 ,
+    importance: #MEDIUM,
+    label: 'Purchase Date'
+  } ]
+  @UI.identification: [ {
+    position: 70 ,
+    label: 'Purchase Date'
+  } ]
+  Purchasedate;
+
+  @UI.lineItem: [ {
+    position: 80 ,
+    importance: #MEDIUM,
+    label: 'Expiration Date'
+  } ]
+  @UI.identification: [ {
+    position: 80 ,
+    label: 'Expiration Date'
+  } ]
+  Expirationdate;
+
+  @UI.lineItem: [ {
+    position: 90 ,
+    importance: #MEDIUM,
+    label: 'Expired'
+  } ]
+  @UI.identification: [ {
+  position: 90,
+  label: 'Expired'
+  } ]
+  Expired;
+
+  @UI.lineItem: [ {
+    position: 100 ,
+    importance: #MEDIUM,
+    label: 'Rating'
+  } ]
+  @UI.identification: [ {
+    position: 100 ,
+    label: 'Rating'
+  } ]
+  Rating;
+
+  @UI.lineItem: [ {
+    position: 110 ,
+    importance: #MEDIUM,
+    label: 'Note'
+  } ]
+  @UI.identification: [ {
+    position: 110 ,
+    label: 'Note'
+  } ]
+  Note;
+
+  @UI.hidden: true
+  Createdby;
+
+  @UI.hidden: true
+  Createdat;
+
+  @UI.hidden: true
+  Lastchangedby;
+
+  @UI.hidden: true
+  Locallastchanged;
+}

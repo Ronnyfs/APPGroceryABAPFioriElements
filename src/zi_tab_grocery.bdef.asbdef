@@ -1,0 +1,54 @@
+managed implementation in class ZCL_GROCERY unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZI_TAB_GROCERY alias Grocery
+persistent table ztab_grocery
+draft table ztab_grocery_d
+etag master LocalLastChanged
+lock master total etag LastChangeDat
+authorization master ( global )
+
+{
+  field ( readonly )
+  ID;
+
+
+  field ( numbering : managed )
+  ID;
+
+  create;
+  update;
+  delete;
+
+  action checkExpirationDate result [1] $self;
+
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+
+
+
+  mapping for ztab_grocery
+    {
+      ID               = id;
+      Product          = product;
+      Category         = category;
+      Brand            = brand;
+      Price            = price;
+      Currency         = currency;
+      Quantity         = quantity;
+      PurchaseDate     = purchasedate;
+      ExpirationDate   = expirationdate;
+      Expired          = expired;
+      Rating           = rating;
+      Note             = note;
+      CreatedBy        = createdby;
+      CreatedAt        = createdat;
+      LastChangedBy    = lastchangedby;
+      LastChangeDat    = lastchangedat;
+      LocalLastChanged = locallastchanged;
+    }
+}
